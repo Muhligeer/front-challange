@@ -1,9 +1,132 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <link rel="stylesheet" href="index.css" />
-  </head>
-  <body>
-    <!-- escreva seu codigo aqui -->
-  </body>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+    integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+  <script type="text/javascript" src="mtel.js"></script>
+
+  <style>
+    .hpp {
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+
+    .imgnew {
+      margin-left: -20px;
+      border-top-left-radius: 10px;
+      border-bottom-left-radius: 10px
+    }
+
+    .btn-custom {
+      padding: 1px;
+    }
+  </style>
+</head>
+
+<body style="background:#3f65d4">
+  <div class="container" style="margin-left: 80px; margin-right: 80px">
+    <div class="row hpp">
+      <div class="col-md-12 bg-white" style="border-radius: 10px;">
+        <div class="row">
+          <div class="col-md-5">
+            <img class="imgnew" src="images/68747470733a2f2f692e696d6775722e636f6d2f3134314f3341612e6a7067.jpg"
+              width="100%" height="100%">
+          </div>
+          <div class="col-7 text-center" style="padding: 40px">
+            <h3>Create an Account!</h3>
+            <form action="#" method="post" id="form">
+              <div class="row" style="padding: 10px;">
+                <div class="col">
+                  <input type="text" id="txtName" style="border-radius : 50px; height: 50px;" class="form-control"
+                    placeholder="First name">
+                </div>
+                <div class="col">
+                  <input type="text" id="txtPhone" style="border-radius : 50px; height: 50px;" class="form-control"
+                    placeholder="Phone" onkeyup="mascara( this, mtel );" maxlength="15">
+                </div>
+              </div>
+              <div class="row" style="padding: 10px;">
+                <div class="col">
+                  <input type="text" id="txtEmail" style="border-radius : 50px; height: 50px;" class="form-control"
+                    placeholder="Email Address">
+                </div>
+              </div>
+              <div class="row" style="padding: 10px;">
+                <div class="col">
+                  <input type="password" id="txtPassword" style="border-radius : 50px; height: 50px;"
+                    class="form-control" placeholder="Password">
+                </div>
+                <div class="col">
+                  <input type="password" id="txtConfirmPassword" style="border-radius : 50px; height: 50px;"
+                    class="form-control" placeholder="Repeat Password">
+                </div>
+              </div>
+              <div class="row" style="padding: 10px;">
+                <div class="col">
+                  <input type="submit" id="btnSubmit" class="btn btn-info form-control"
+                    style="border-radius : 50px; height: 50px;; background-color: #4e73de" value="Register Account">
+                </div>
+              </div>
+              <hr />
+              <div class="row" style="padding: 10px;">
+                <div class="col">
+                  <button type="submit" class="btn btn-danger form-control"
+                    style="border-radius : 50px; height: 50px;; background-color: #ea4236"><i class="fab fa-google"></i>
+                    Register with
+                    Google</button>
+                </div>
+              </div>
+              <div class="row" style="padding: 10px;">
+                <div class="col">
+                  <button type="submit" class="btn btn-primary form-control"
+                    style="border-radius : 50px; height: 50px; background-color: #3b5998"><i
+                      class="fab fa-facebook-f"></i> Register
+                    with Facebook</button>
+                </div>
+              </div>
+              <hr />
+              <div class="row">
+                <div class="col" style="height: 22px">
+                  <button type="button" class="btn btn-link">Forgot Password?</button>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <button type="button" class="btn btn-link">Already have an account? Login!</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</body>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script type="text/javascript">
+  $(function () {
+    $("#btnSubmit").click(function () {
+      var name = $("#txtName").val();
+      var phone = $("#txtPhone").val();
+      var email = $("#txtEmail").val();
+      var password = $("#txtPassword").val();
+      var confirmPassword = $("#txtConfirmPassword").val();
+      if (password != confirmPassword) {
+        alert("Passwords do not match.");
+        return false;
+      }
+      else {
+        alert("name: " + name + "\nphone: " + phone + "\nemail: " + email + "\npassword: " + password);
+      }
+      return true;
+    });
+  });
+</script>
+
 </html>
